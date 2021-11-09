@@ -10,6 +10,7 @@ import { SetUserData } from "src/hooks/useMoralis/utils/setUserData";
 import { Web3EnableOptions } from "src/hooks/useMoralis/_useMoralisWeb3";
 import { Environment } from "src/hooks/useMoralis/_useMoralisInit";
 
+export type MoralisWeb3 = unknown;
 export interface AuthError extends Error {
   code: number;
 }
@@ -43,10 +44,17 @@ export interface MoralisContextValue {
   refetchUserData: () => Promise<void>;
 
   enableWeb3: (options?: Web3EnableOptions) => void;
-  web3: MoralisType.Web3 | null;
+  web3: MoralisWeb3 | null;
   isWeb3Enabled: boolean;
   web3EnableError: Error | null;
   isWeb3EnableLoading: boolean;
+
+  chainId: string | null;
+  account: string | null;
+  network: string | null;
+  // Add/import connector type
+  connector: any | null;
+  connectorType: string | null;
 }
 
 export const MoralisContext = createContext<null | MoralisContextValue>(null);
