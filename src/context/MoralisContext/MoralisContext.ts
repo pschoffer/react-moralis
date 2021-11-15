@@ -6,9 +6,9 @@ import {
   Login,
   Signup,
 } from "../../hooks/useMoralis/_useMoralisAuth";
-import { SetUserData } from "src/hooks/useMoralis/utils/setUserData";
-import { Web3EnableOptions } from "src/hooks/useMoralis/_useMoralisWeb3";
-import { Environment } from "src/hooks/useMoralis/_useMoralisInit";
+import { SetUserData } from "../../hooks/useMoralis/utils/setUserData";
+import { Web3EnableOptions } from "../../hooks/useMoralis/_useMoralisWeb3";
+import { Environment } from "../../hooks/useMoralis/_useMoralisInit";
 
 export type MoralisWeb3 = unknown;
 export interface AuthError extends Error {
@@ -44,6 +44,7 @@ export interface MoralisContextValue {
   refetchUserData: () => Promise<void>;
 
   enableWeb3: (options?: Web3EnableOptions) => void;
+  deactivateWeb3: () => Promise<void>;
   web3: MoralisWeb3 | null;
   isWeb3Enabled: boolean;
   web3EnableError: Error | null;
