@@ -5,10 +5,10 @@ import {
   Authentication,
   Login,
   Signup,
-} from "../../hooks/useMoralis/_useMoralisAuth";
-import { SetUserData } from "../../hooks/useMoralis/utils/setUserData";
-import { Web3EnableOptions } from "../../hooks/useMoralis/_useMoralisWeb3";
-import { Environment } from "../../hooks/useMoralis/_useMoralisInit";
+} from "../../hooks/core/useMoralis/_useMoralisAuth";
+import { SetUserData } from "../../hooks/core/useMoralis/utils/setUserData";
+import { Web3EnableOptions } from "../../hooks/core/useMoralis/_useMoralisWeb3";
+import { Environment } from "../../hooks/core/useMoralis/_useMoralisInit";
 
 export type MoralisWeb3 = unknown;
 export interface AuthError extends Error {
@@ -53,7 +53,7 @@ export interface MoralisContextValue {
   chainId: string | null;
   account: string | null;
   network: string | null;
-  // Add/import connector type
+  // TODO: Add/import connector type
   connector: any | null;
   connectorType: string | null;
 }
