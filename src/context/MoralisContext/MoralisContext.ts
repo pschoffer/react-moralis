@@ -54,8 +54,9 @@ export interface MoralisContextValue {
   account: string | null;
   network: string | null;
   // TODO: Add/import connector type
-  connector: any | null;
+  connector: unknown | null;
   connectorType: string | null;
+  provider: unknown | null;
 }
 
 export const MoralisContext = createContext<null | MoralisContextValue>(null);
